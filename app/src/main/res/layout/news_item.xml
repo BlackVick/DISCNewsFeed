@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:elevation="7dp"
+    android:background="?attr/cardBackground"
+    app:corner_radius="12dp"
+    android:layout_margin="9dp"
+    app:cardBackgroundColor="">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:id="@+id/newsImage"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparentDeepBlack">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="This is the news title"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:id="@+id/newsTitle"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="This is the news description"
+            android:textStyle="normal"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/newsDescription"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="10-20-2021"
+            android:textStyle="normal"
+            android:textSize="11sp"
+            android:gravity="end"
+            android:textColor="@color/fadeGrey"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/newsTime"/>
+
+    </LinearLayout>
+
+</com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
