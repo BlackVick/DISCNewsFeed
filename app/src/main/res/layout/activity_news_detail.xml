@@ -1,9 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewsDetail">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newsTitle"
+                android:text=""
+                android:textSize="20sp"
+                android:textColor="?attr/textTitle"
+                android:textStyle="bold"
+                android:layout_marginTop="55dp"/>
+
+            <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:corner_radius="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newsImage"
+                    android:adjustViewBounds="true"/>
+
+            </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_gravity="center"
+                    android:textColor="@color/fadeGrey"
+                    android:textSize="13sp"
+                    android:id="@+id/newsTime"
+                    android:text=""
+                    android:paddingEnd="4dp"
+                    android:paddingStart="4dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center_vertical"
+                    android:layout_gravity="center"
+                    android:textColor="@color/fadeGrey"
+                    android:textSize="13sp"
+                    android:textStyle="italic"
+                    android:id="@+id/newsAuthor"
+                    android:paddingEnd="4dp"
+                    android:paddingStart="1dp"
+                    android:layout_marginEnd="3dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/view_back"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newsDescription"
+                android:text=""
+                android:textSize="15sp"
+                android:textColor="?attr/textColor"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:autoLink="all"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newsContent"
+                android:text=""
+                android:textSize="15sp"
+                android:textColor="?attr/textColor"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="7dp"
+                android:autoLink="all"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="40dp"
+                android:layout_gravity="end"
+                android:id="@+id/readMore">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read More"
+                    android:textStyle="italic|bold"
+                    android:textSize="13sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="casual"
+                    android:drawableEnd="@drawable/ic_read_more"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        android:layout_margin="10dp"
+        android:id="@+id/backBtn">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back_icon"
+            android:adjustViewBounds="true"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

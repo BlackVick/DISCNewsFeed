@@ -8,8 +8,7 @@
     android:elevation="7dp"
     android:background="?attr/cardBackground"
     app:corner_radius="12dp"
-    android:layout_margin="9dp"
-    app:cardBackgroundColor="">
+    android:layout_margin="9dp">
 
     <ImageView
         android:layout_width="match_parent"

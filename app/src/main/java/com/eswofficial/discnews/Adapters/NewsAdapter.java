@@ -15,6 +15,7 @@ import com.eswofficial.discnews.Interface.ItemClickListener;
 import com.eswofficial.discnews.Models.News;
 import com.eswofficial.discnews.NewsDetail;
 import com.eswofficial.discnews.R;
+import com.eswofficial.discnews.Util.Common;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -82,7 +83,15 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.setItemClickListener((view, position1, isLongClick) -> {
 
             Intent detailIntent = new Intent(context, NewsDetail.class);
-
+            detailIntent.putExtra(Common.NEWS_TITLE, currentNews.getTitle());
+            detailIntent.putExtra(Common.NEWS_DESC, currentNews.getDescription());
+            detailIntent.putExtra(Common.NEWS_CONTENT, currentNews.getContent());
+            detailIntent.putExtra(Common.NEWS_IMAGE, currentNews.getUrlToImage());
+            detailIntent.putExtra(Common.NEWS_AUTHOR, currentNews.getAuthor());
+            detailIntent.putExtra(Common.NEWS_URL, currentNews.getUrl());
+            detailIntent.putExtra(Common.NEWS_TIMESTAMP, currentNews.getPublishedAt());
+            context.startActivity(detailIntent);
+            activity.overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
 
         });
 

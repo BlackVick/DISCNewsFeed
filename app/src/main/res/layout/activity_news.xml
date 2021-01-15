@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewsActivity">
+    tools:context=".NewsActivity"
+    android:animateLayoutChanges="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/titleBarBackground"
+        android:layout_alignParentTop="true"
+        android:id="@+id/titleBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="News Feed"
+            android:textColor="?attr/titleBarText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/dancing_script"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:id="@+id/newsRecycler"
+        android:layout_below="@+id/titleBar"/>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loadingIndicator"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="LineScalePartyIndicator"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_below="@+id/titleBar"
+        android:layout_margin="5dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/newContentIndic">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Content"
+            android:textStyle="italic|bold"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:drawableEnd="@drawable/ic_new"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

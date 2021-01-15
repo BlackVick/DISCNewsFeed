@@ -1,8 +1,10 @@
 package com.eswofficial.discnews.Models;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 public class News {
 
-    private Source source;
     private String author;
     private String title;
     private String description;
@@ -14,8 +16,7 @@ public class News {
     public News() {
     }
 
-    public News(Source source, String author, String title, String description, String url, String urlToImage, String publishedAt, String content) {
-        this.source = source;
+    public News(String author, String title, String description, String url, String urlToImage, String publishedAt, String content) {
         this.author = author;
         this.title = title;
         this.description = description;
@@ -23,14 +24,6 @@ public class News {
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
         this.content = content;
-    }
-
-    public Source getSource() {
-        return source;
-    }
-
-    public void setSource(Source source) {
-        this.source = source;
     }
 
     public String getAuthor() {
@@ -87,5 +80,21 @@ public class News {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        return super.equals(obj);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

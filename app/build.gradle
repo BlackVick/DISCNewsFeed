@@ -51,6 +51,7 @@ dependencies {
 
     //nosql shared pref
     implementation 'io.paperdb:paperdb:2.1'
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 
     //image libraries
     implementation 'com.squareup.picasso:picasso:2.71828'
