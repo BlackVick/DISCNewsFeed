@@ -32,7 +32,7 @@ public class NewsActivity extends AppCompatActivity {
     private CardView newContentIndic;
 
     //data
-    private NewsAdapter adapter;
+    public NewsAdapter adapter;
     private List<News> newsList = new ArrayList<>();
 
     //thread
@@ -120,7 +120,7 @@ public class NewsActivity extends AppCompatActivity {
 
             }
 
-        }, 10000);
+        }, 7000);
 
     }
 
@@ -184,6 +184,9 @@ public class NewsActivity extends AppCompatActivity {
 
         //write fetch state
         Paper.book().write(Common.FETCH_STATE, Common.UNDONE_STATE);
+
+        //refresh
+        startTimedRefresh();
 
     }
 
